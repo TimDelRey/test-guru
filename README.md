@@ -23,3 +23,9 @@ Things you may want to cover:
 
 * ...
 # Test-guru
+Objects of test-guru:
+-- Category
+-- Qustion
+-- Answer
+-- User
+-- Result
