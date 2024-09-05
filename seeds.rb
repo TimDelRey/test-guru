@@ -9,7 +9,7 @@
 #   end
 
 # frozen_string_literal: true
-Answer.destroy_all
+
 Question.destroy_all
 Test.destroy_all
 Category.destroy_all
@@ -56,59 +56,76 @@ veg_course_q1, veg_course_q2,
 meat_course_q1, meat_course_q2,
 fish_course_q1, fish_course_q2 =
   Question.create! ([ # 1st line category
-    {body: 'Сколько листов айсберга требется в салат из 1 морковки и 1 белой редьки?', # one
+    {body: 'Сколько листов айсберга требется в салат 
+      из 1 морковки и 1 белой редьки?', # one
       test_id: vegetable_salads.id},
-    {body: 'Сколько грамм сыра нужно добавить в салат из 100г риса, 4 яиц, 1 банки кукурузы, 3 маринованых огурчика?', # 150 gramm
+    {body: 'Сколько грамм сыра нужно добавить в салат из 
+      100г риса, 4 яиц, 1 банки кукурузы, 3 маринованых 
+      огурчика?', # 150 gramm
       test_id: vegetable_salads.id},
 
-    {body: 'Сколько требуется моркови в классический домашний салат с зеленым горошком при 150 граммах колбасы и 1 банке зеленого горошка?', # no one
+    {body: 'Сколько требуется моркови в классический домашний 
+      салат с зеленым горошком при 150 граммах колбасы и 
+      1 банке зеленого горошка?', # no one
       test_id: meat_salads.id},
-    {body: 'На cколько времени необходимо оставить остужаться салат с ананасами, овощами, ветчиной и яйцом?', # 2 hours
+    {body: 'На cколько времени необходимо оставить остужаться 
+      салат с ананасами, овощами, ветчиной и яйцом?', # 2 hours
       test_id: meat_salads.id},
 
-    {body: 'Какой сок добавляется в апельсиновый салат с курицей, фенхелем и гранатом?', # limon juice
+    {body: 'Какой сок добавляется в апельсиновый салат 
+      с курицей, фенхелем и гранатом?', # limon juice
       test_id: fruit_salads.id},
-    {body: '3 столовые ложки чего добавляется в салат из маринованной свеклы с яблоками?', # roasted seeds (sunflower, pumpkin, sesame)
+    {body: '3 столовые ложки чего добавляется в салат из 
+      маринованной свеклы с яблоками?', # roasted seeds (sunflower, pumpkin, sesame)
       test_id: fruit_salads.id},
     # 2nd line category
-    {body: 'Какой ингридиент добавляется в красный борщ из цветной капусты?', # red wine
+    {body: 'Какой ингридиент добавляется в красный борщ из
+      цветной капусты?', # red wine
       test_id: vegetable_soups.id},
-    {body: 'Какой сыр лучше всего подходит для сливочного супа из брокколи с семечками?', # parvmezan
+    {body: 'Какой сыр лучше всего подходит для сливочного 
+      супа из брокколи с семечками?', # parvmezan
       test_id: vegetable_soups.id},
 
     {body: 'Что принято добавлять в восточный суп с рисом?', # chiken wings
       test_id: meat_soups.id},
-    {body: 'С чем рекомендуется подавать мясной суп с луком пореем?', # with grenkies
+    {body: 'С чем рекомендуется подавать мясной суп 
+      с луком пореем?', # with grenkies
       test_id: meat_soups.id},
 
-    {body: 'Какого овоща нет в рецепте ароматного супа с лососем и овощами?', # all except carrots and leeks
+    {body: 'Какого овощя нет в рецепте ароматного супа 
+      с лососем и овощами?', # all except carrots and leeks
       test_id: fish_soups.id},
-    {body: 'Сколько порций супа из креветок по-польски получится из 6 картофелин и 230 грамм креветок?', # 5
+    {body: 'Сколько порций супа из креветок по-польски 
+      получится из 6 картофелин и 230 грамм креветок?', # 5
       test_id: fish_soups.id},
     # 3s line category
-    {body: 'Какая крупа применяется в деревенской каше с овощами?', # perlovka
+    {body: 'Какая крупа применяется в деревенской каше 
+      с овощами?', # perlovka
       test_id: vegetable_course.id},
-    {body: 'Какое вино добавляется в ризотто с варенной свеклой?', # red dry wine
+    {body: 'Какое вино добавляется в ризотто с варенной
+      свеклой?', # red dry wine
       test_id: vegetable_course.id},
 
-    {body: 'В каких пропорциях добавляются чеснок и имбирь в курицу Кари?', # a little more garlic than ginger
+    {body: 'В каких пропорциях добавляются чеснок и имбирь 
+      в курицу Кари?', # a little more garlic than ginger
       test_id: meat_course.id},
-    {body: 'Какие грибы нужны в гуляше из дикого кабана с грибами?', #champignons
+    {body: 'Какие грибы нужныв гуляш из дикого кабана с грибами?', #champignons
       test_id: meat_course.id},
 
-    {body: 'Какая паста применяется в рецепте форели запеченной в апельсинах', # pasts meeso
+    {body: 'Какая паста применяется в рецепте форели запеченной 
+      в апельсинах', # pasts meeso
       test_id: fish_course.id},
-    {body: 'Какой перец добавляется в спагетти с тыквой и креветками?', # ground chili pepper
+    {body: 'Какой перец добавляется в спагетти с тыквой 
+      и креветками?', # ground chili pepper
       test_id: fish_course.id},
     ]) 
-  # 1st line category
 veg_salads_q1_a1, veg_salads_q1_a2, veg_salads_q1_a3, veg_salads_q1_a4, 
 veg_salads_q2_a1, veg_salads_q2_a2, veg_salads_q2_a3, veg_salads_q2_a4, 
 meat_salads_q1_a1, meat_salads_q1_a2, meat_salads_q1_a3, meat_salads_q1_a4,
 meat_salads_q2_a1, meat_salads_q2_a2, meat_salads_q2_a3, meat_salads_q2_a4,
 fruit_salads_q1_a1, fruit_salads_q1_a2, fruit_salads_q1_a3, fruit_salads_q1_a4,
 fruit_salads_q2_a1, fruit_salads_q2_a2, fruit_salads_q2_a3, fruit_salads_q2_a4 = 
-Answer.create! ([ 
+Answer.create! ([ # 1st line category
   {body: 'Один', correct: true, question_id: veg_salads_q1.id},
   {body: 'Два', correct: false, question_id: veg_salads_q1.id},
   {body: 'Три', correct: false, question_id: veg_salads_q1.id},
@@ -167,51 +184,10 @@ Answer.create! ([
   {body: 'С пампушками', correct: false, question_id: meat_soups_q2.id},
   {body: 'С гренками', correct: true, question_id: meat_soups_q2.id},
 
-  {body: 'Морковь', correct: false, question_id: fish_soups_q1.id},
-  {body: 'Огурец', correct: true, question_id: fish_soups_q1.id},
-  {body: 'Лук', correct: false, question_id: fish_soups_q1.id},
-  {body: 'Помидор', correct: false, question_id: fish_soups_q1.id},
 
-  {body: '5 порций', correct: true, question_id: fish_soups_q2.id},
-  {body: '6 порций', correct: false, question_id: fish_soups_q2.id},
-  {body: '7 порций', correct: false, question_id: fish_soups_q2.id},
-  {body: '8 порций', correct: false, question_id: fish_soups_q2.id}
+
 ])
 # 3th line
 veg_course_q1_a1, veg_course_q1_a2, veg_course_q1_a3, veg_course_q1_a4,
-veg_course_q2_a1, veg_course_q2_a2, veg_course_q2_a3, veg_course_q2_a4,
 meat_course_q1_a1, meat_course_q1_a2, meat_course_q1_a3, meat_course_q1_a4,
-meat_course_q2_a1, meat_course_q2_a2, meat_course_q2_a3, meat_course_q2_a4,
-fish_course_q1_a1, fish_course_q1_a2, fish_course_q1_a3, fish_course_q1_a4,
-fish_course_q2_a1, fish_course_q2_a2, fish_course_q2_a3, fish_course_q2_a4 = 
-Answer.create! ([
-  {body: 'Пшено', correct: false, question_id: veg_course_q1.id},
-  {body: 'Ячмень', correct: false, question_id: veg_course_q1.id},
-  {body: 'Овсянка', correct: false, question_id: veg_course_q1.id},
-  {body: 'Перловка', correct: true, question_id: veg_course_q1.id},
-
-  {body: 'Розовое полусладкое вино', correct: false, question_id: veg_course_q2.id},
-  {body: 'Красное полусладкое', correct: false, question_id: veg_course_q2.id},
-  {body: 'Красное сухое вино', correct: true, question_id: veg_course_q2.id},
-  {body: 'Белое сухое вино', correct: false, question_id: veg_course_q2.id},
-
-  {body: 'Чеснока столько же сколько имбиря', correct: false, question_id: meat_course_q1.id},
-  {body: 'Чеснока чуть больше чем имбиря', correct: true, question_id: meat_course_q1.id},
-  {body: 'Имбиря чуть больше чем чеснока', correct: false, question_id: meat_course_q1.id},
-  {body: 'Пропорции имбиря и чеснока не важны', correct: false, question_id: meat_course_q1.id},
-
-  {body: 'Шампиньоны', correct: true, question_id: meat_course_q2.id},
-  {body: 'Опята', correct: false, question_id: meat_course_q2.id},
-  {body: 'Мышата', correct: false, question_id: meat_course_q2.id},
-  {body: 'Любые грибы', correct: false, question_id: meat_course_q2.id},
-
-  {body: 'Паста Песто', correct: false, question_id: fish_course_q1.id},
-  {body: 'Паста Карбонара', correct: false, question_id: fish_course_q1.id},
-  {body: 'Паста Мессо', correct: true, question_id: fish_course_q1.id},
-  {body: 'Паста Конкилье', correct: false, question_id: fish_course_q1.id},
-
-  {body: 'Молотый чили', correct: true, question_id: fish_course_q2.id},
-  {body: 'Свежемолотый черный перец', correct: false, question_id: fish_course_q2.id},
-  {body: 'Кайенский перец', correct: false, question_id: fish_course_q2.id},
-  {body: 'Мелконарезанный халапеньо', correct: false, question_id: fish_course_q2.id}
-])
+fish_course_q1_a1, fish_course_q1_a2, fish_course_q1_a3, fish_course_q1_a4
