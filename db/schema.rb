@@ -36,11 +36,13 @@ ActiveRecord::Schema.define(version: 2024_09_08_142826) do
   end
 
   create_table "started_tests", force: :cascade do |t|
+    t.string "status"
     t.integer "user_id", null: false
     t.integer "test_id", null: false
-    t.boolean "passed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["test_id"], name: "index_started_tests_on_test_id"
+    t.index ["user_id"], name: "index_started_tests_on_user_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -62,6 +64,8 @@ ActiveRecord::Schema.define(version: 2024_09_08_142826) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "tests"
+  add_foreign_key "started_tests", "tests"
+  add_foreign_key "started_tests", "users"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users"
 end
