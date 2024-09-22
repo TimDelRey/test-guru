@@ -1,10 +1,17 @@
 class Test < ApplicationRecord
 
   belongs_to :category
-  belongs_to :author, class_name: 'User', foreign_key: 'user_id'
+  belongs_to :author, 
+              class_name: 'User', 
+              foreign_key: 'user_id'
+
   has_many :questions
   has_many :started_tests
   has_many :users, through: :started_tests
+
+  scope :simple, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
 
   def self.desc_tests_by_category (name_category)
     select(:title, :updated_at)

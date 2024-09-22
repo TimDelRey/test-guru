@@ -1,6 +1,8 @@
 class User < ApplicationRecord
 
-  has_many :created_tests, class_name: 'Test', foreign_key: 'user_id'
+  has_many :created_tests, 
+            class_name: 'Test', 
+            foreign_key: 'user_id'
   has_many :started_test
   has_many :tests, through: :started_test
 

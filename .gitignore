@@ -33,6 +33,3 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-
-# Ignoring minor changes
-app/models/application_record.rb
