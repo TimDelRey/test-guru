@@ -9,7 +9,7 @@
 #   end
 
 # frozen_string_literal: true
-Started_test.destroy_all
+StartedTest.destroy_all
 Answer.destroy_all
 Question.destroy_all
 Test.destroy_all
@@ -216,3 +216,29 @@ Answer.create! ([
   {body: 'Кайенский перец', correct: false, question_id: fish_course_q2.id},
   {body: 'Мелконарезанный халапеньо', correct: false, question_id: fish_course_q2.id}
 ])
+
+
+pomich_users_tests = [{test_id: vegetable_salads.id},
+                      {test_id: meat_soups.id},
+                      {test_id: fish_course.id}]
+
+nataly_users_tests = [{test_id: meat_salads.id},
+                      {test_id: fish_soups.id},
+                      {test_id: vegetable_salads.id}]
+
+maks_users_tests = [{test_id: fruit_salads.id},
+                    {test_id: vegetable_course.id},
+                    {test_id: meat_salads.id}]
+
+# pomich_exp1, pomich_exp2, 
+pomich_exp3 = 
+User.find(pomich.id).started_test.create(pomich_users_tests)
+
+# nataly_exp1, nataly_exp2, 
+nataly_exp3 = 
+User.find(nataly.id).started_test.create(nataly_users_tests)
+
+# maks_exp1, maks_exp2, 
+maks_exp3 = 
+User.find(maks.id).started_test.create(maks_users_tests)
+
