@@ -3,4 +3,6 @@ class Question < ApplicationRecord
 
   has_many :answer, 
             dependent: :destroy
+
+  validates :body, presence: true
 end

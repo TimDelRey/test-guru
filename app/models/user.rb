@@ -10,11 +10,7 @@ class User < ApplicationRecord
             dependent: :destroy
   has_many :tests, through: :started_test
 
-  # def users_history_by_level(level)
-  #   Test.joins('JOIN started_tests ON started_tests.test_id = tests.id')
-  #     .where(started_tests: { user_id: id }, tests: { level: level })
-  #     .pluck(:title)
-  # end
+  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def tests_history_by_level (level)
     Test.joins(:started_tests)
@@ -22,4 +18,18 @@ class User < ApplicationRecord
       .where('level = ?',level)     
       .pluck(:title)
   end
+
+  # scope :simple, -> (level){ Test.joins(:started_tests)
+  #                                .where('level = ?',level)     
+  #                                .pluck(:title) }
+
+  # def simple (level)    
+  #   User.simple(level) 
+  # end
+
+
+  # scope :tests_history_by_level, ->(level){ Test.joins(:started_tests)
+  #                                               .where(started_tests: {user_id: self.id}) вместо self.id дописать User.first (к примеру)
+  #                                               .where('level = ?',level)     
+  #                                               .pluck(:title) }
 end
